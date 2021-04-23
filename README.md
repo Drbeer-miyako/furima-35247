@@ -2,37 +2,37 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nick_name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| name     | text   | null: false |
-|family_name| text   | null: false |
-| name_kana | text   | null: false |
-| family_name_kana | text   | null: false |
-| birth_date |  date  | null: false |
+| Column          | Type   | Options                      |
+| --------        | ------ | -----------                  |
+| nick_name       | string | null: false                  |
+| email           | string | null: false ,uniqueness: true|
+| encrypted_password | string | null: false               |
+| first_name_zen  | string | null: false                  |
+| family_name_zen | string | null: false                  |
+| first_name_kana | string | null: false                  |
+| family_name_kana| string   | null: false                |
+| birth_date      |  date  | null: false                  |
 
 ### Association
-- has_many :item
-- has_one :order
-- has_one :delivery_address
+- has_many :items
+- has_many :orders
+
 
 
 ## items テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| title  | string | null: false |
-|description| text| null: false |
-|category| text   | null: false |
-|status  | text   | null: false |
-|delivery_charge| text | null: false|
-|regional_delivery|text| null: false|
-|delivery_date_indication|text| null: false|
-|price   | integer     | null: false|
-| image    | ActiveStorage       |
-| user     | references          |
+| Column             | Type      | Options     |
+| ------             | ------    | ----------- |
+| title              | string    | null: false |
+|description         | text      | null: false |
+|category            | string    | null: false |
+|status              | string    | null: false |
+|delivery_charge     | string    | null: false |
+|prefecture_id       |integer    | null: false |
+|delivery_date_indication|string | null: false |
+|price               | integer   | null: false | 
+| image              | ActiveStorage           |
+| user               | references              |
 
 ### Association
 - belongs_to :user
@@ -49,31 +49,25 @@
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 |items   | references | null: false, foreign_key: true |
-| address| references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :item
 - belongs_to :user
-- belongs_to :delivery_address
+- has_one :order
 
 
 
 ## delivery_address テーブル
 | Column         | Type    | Options     |
 | -------------  | ------- | null: false |
-| credit_card    | integer | null: false |
-| expiration_date| integer | null: false |
-| security_code  | integer | null: false |
-|                |         |             |
 | address        | string  | null: false |
-| prefecture     | string  | null: false |
+|prefecture_id       |integer    | null: false |
 | city           | string  | null: false |
 | block          | string  | null: false | 
-| building       | string  | null: false |
+| building       | string  |             |
 | telephone      | string  | null: false |
-| user   | references | null: false, foreign_key: true |
+| order   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :item
-- has_one :delivery_address
+- belongs_to :order
