@@ -20,19 +20,18 @@
 
 
 ## items テーブル
-
-| Column             | Type      | Options     |
-| ------             | ------    | ----------- |
-| title              | string    | null: false |
-|description         | text      | null: false |
-|category            | string    | null: false |
-|status              | string    | null: false |
-|delivery_charge     | string    | null: false |
-|prefecture_id       |integer    | null: false |
-|delivery_date_indication|string | null: false |
-|price               | integer   | null: false | 
-| image              | ActiveStorage           |
-| user               | references              |
+ 
+| Column                    | Type       | Options     |
+| ------                    | ------     | ----------- |
+| title                     | string     | null: false |
+|description                | text       | null: false |
+|category                   | string     | null: false |
+|status_id                  | integer    | null: false |
+|delivery_charge_id         | integer    | null: false |
+|prefecture_id              | integer    | null: false |
+|delivery_date_indication_id| integer    | null: false |
+|price                      | integer    | null: false | 
+| user                      | references | foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -48,19 +47,19 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
-|items   | references | null: false, foreign_key: true |
+|item   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :item
 - belongs_to :user
-- has_one :order
+- has_one :delivery_address
 
 
 
-## delivery_address テーブル
+## delivery_addresses テーブル
 | Column         | Type    | Options     |
-| -------------  | ------- | null: false |
+| -------------  | ------- | -------     |
 | address        | string  | null: false |
 |prefecture_id       |integer    | null: false |
 | city           | string  | null: false |
