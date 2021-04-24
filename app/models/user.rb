@@ -2,8 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable
-
+         :recoverable, :rememberable, :validatable
   has_many :items
   # has_many :comments, dependent: :destroy
           
@@ -13,10 +12,6 @@ class User < ApplicationRecord
     validates :password
     validates :password_confirmation
   end
-
-  with_options presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: '@を含めて入力してください' }, uniqueness: { case_sensitive: false } do
-    validates :email
-  end  
 
   validates :nickname, presence: true  
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字を使用してください' } do    
