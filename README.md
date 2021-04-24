@@ -5,7 +5,7 @@
 | Column          | Type   | Options                      |
 | --------        | ------ | -----------                  |
 | nick_name       | string | null: false                  |
-| email           | string | null: false ,uniqueness: true|
+| email           | string | null: false ,unique: true    |
 | encrypted_password | string | null: false               |
 | first_name_zen  | string | null: false                  |
 | family_name_zen | string | null: false                  |
@@ -47,7 +47,7 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
-|item   | references | null: false, foreign_key: true |
+|item   | references | null: false, foreign_key: true  |
 
 ### Association
 
