@@ -13,7 +13,7 @@
                 <mxCell id="8" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="680" y="480" width="250" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="title (タイトル)&#10;delivery_charge (送料)&#10;price (価格)&#10;image (画像)&#10;status (状態)&#10;category (カテゴリー)&#10;prefecture_id (発送元の地域)&#10;delivery_date_indication (発送日の目安)&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;strokeWidth=1;" parent="8" vertex="1">
+                <mxCell id="11" value="title (タイトル)&#10;delivery_charge (送料)&#10;price (価格)&#10;image (画像)&#10;status (状態)&#10;category (カテゴリー)&#10;prefecture_id (発送元の地域)&#10;delivery_date_indication (発送日の目安)&#10;&#10;user_id（外部キー）&#10;image_id（外部キー）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;strokeWidth=1;" parent="8" vertex="1">
                     <mxGeometry y="26" width="250" height="164" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="order(購入記録)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;strokeWidth=1;" parent="1" vertex="1">
