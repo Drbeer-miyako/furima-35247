@@ -25,7 +25,7 @@
 | ------                    | ------     | ----------- |
 | title                     | string     | null: false |
 |description                | text       | null: false |
-|category                   | string     | null: false |
+|category_id                | integer    | null: false |
 |status_id                  | integer    | null: false |
 |delivery_charge_id         | integer    | null: false |
 |prefecture_id              | integer    | null: false |
