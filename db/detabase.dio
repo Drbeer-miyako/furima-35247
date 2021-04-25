@@ -1,6 +1,10 @@
 <mxfile>
     <diagram id="otBJUp34ibwrA_alPuJD" name="ページ1">
+<<<<<<< HEAD
         <mxGraphModel dx="125" dy="208" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+=======
+        <mxGraphModel dx="1325" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+>>>>>>> parent of 548c2b3 (Merge pull request #2 from Drbeer-miyako/ユーザー管理機能)
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -26,13 +30,25 @@
                     <mxGeometry y="56" width="350" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="delivery_address（発送先情報）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+<<<<<<< HEAD
                     <mxGeometry x="160" y="810" width="280" height="236" as="geometry"/>
+=======
+                    <mxGeometry x="200" y="720" width="280" height="266" as="geometry"/>
+>>>>>>> parent of 548c2b3 (Merge pull request #2 from Drbeer-miyako/ユーザー管理機能)
                 </mxCell>
                 <mxCell id="22" value="user_id（外部キー）&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="21" vertex="1">
                     <mxGeometry y="26" width="280" height="30" as="geometry"/>
                 </mxCell>
+<<<<<<< HEAD
                 <mxCell id="24" value="credit_card（カード番号）&#10;expiration_date（有効期限）&#10;security_code（セキュリティーコード）&#10;&#10;address（郵便番号）&#10;prefecture（都道府県）&#10;city（市町村）&#10;block（番地）&#10;building（建物名）&#10;telephone（電話番号）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="21" vertex="1">
                     <mxGeometry y="56" width="280" height="180" as="geometry"/>
+=======
+                <mxCell id="23" value="address" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="21">
+                    <mxGeometry y="56" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="prefecture_id&#10;&#10;city&#10;&#10;credit_card&#10;&#10;block&#10;&#10;building&#10;&#10;telephone" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="21" vertex="1">
+                    <mxGeometry y="86" width="280" height="180" as="geometry"/>
+>>>>>>> parent of 548c2b3 (Merge pull request #2 from Drbeer-miyako/ユーザー管理機能)
                 </mxCell>
                 <mxCell id="28" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;exitX=1.007;exitY=0.267;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.005;entryY=0.322;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="11" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -40,13 +56,21 @@
                         <mxPoint x="590" y="630" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
+<<<<<<< HEAD
                 <mxCell id="33" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=0.075;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.585;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="11" target="13" edge="1">
+=======
+                <mxCell id="33" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0.585;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="13" edge="1">
+>>>>>>> parent of 548c2b3 (Merge pull request #2 from Drbeer-miyako/ユーザー管理機能)
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="610" y="671" as="sourcePoint"/>
                         <mxPoint x="620" y="740" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
+<<<<<<< HEAD
                 <mxCell id="37" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.133;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="14" edge="1">
+=======
+                <mxCell id="37" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.011;entryY=0.156;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="6" target="13" edge="1">
+>>>>>>> parent of 548c2b3 (Merge pull request #2 from Drbeer-miyako/ユーザー管理機能)
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="510" y="840" as="sourcePoint"/>
                         <mxPoint x="600" y="600" as="targetPoint"/>
