@@ -11,19 +11,23 @@ class Item < ApplicationRecord
      belongs_to_active_hash :delivery_charge
      belongs_to_active_hash :delivery_date_indication
 
-     VALID_PRICEL_HALF =                 /\A[0-9]+\z/
 
-     validates :category_id, numericality: { other_than: 0 } 
-     validates :prefecture_id, numericality: { other_than: 0 }
-     validates :status_id, numericality: { other_than: 0 }
-     validates :delivery_charge_id, numericality: { other_than: 0 }
-     validates :delivery_date_indication_id, numericality: { other_than: 0 }
+     VALID_PRICEL_HALF = /\A[0-9]+\z/
+
+
+     with_options numericality: { other_than: 0 } do
+          validates :category_id
+          validates :prefecture_id
+          validates :status_id
+          validates :delivery_charge_id
+          validates :delivery_date_indication_id
+     end
+
+     with_options presence: true do
+          validates :title
+          validates :description
+          validates :image
+     end
      
-     validates :title, presence: true
-     validates :description, presence: true
-     validates :price, presence: true
-     validates :image, presence: true
-
-     validates  :price,  presence: true, format: {with: VALID_PRICEL_HALF},length: {minimum: 3, maxinum: 7},numericality: { only_integer: true,
-          greater_than: 300, less_than: 10000000
+     validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 end
