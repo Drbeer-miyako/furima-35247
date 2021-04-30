@@ -1,15 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   def index
     # @item = Item.order("created_at DESC")
-    @item = Item.new
   end
 
   def new
-    if user_signed_in?
-      @item = Item.new
-    else
-      redirect_to :user_session
-    end
+    @item = Item.new
   end
 
   def create

@@ -12,9 +12,6 @@ class Item < ApplicationRecord
      belongs_to_active_hash :delivery_date_indication
 
 
-     VALID_PRICEL_HALF = /\A[0-9]+\z/
-
-
      with_options numericality: { other_than: 0 } do
           validates :category_id
           validates :prefecture_id
