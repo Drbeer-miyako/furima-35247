@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  
+
   def index
     @item = Item.order("created_at DESC")
   end
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
   
   def update_params
-    params.require(:prototype).permit(:image, :title, :description, :category_id, :status_id, :delivery_charge_id, :prefecture_id, :delivery_date_indication_id, :price )
-end
+    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :delivery_charge_id, :prefecture_id, :delivery_date_indication_id, :price )
+  end
 
 end
