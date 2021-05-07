@@ -3,9 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
-
   def index
-    @item = Item.order("created_at DESC")
+    @item = Item.order('created_at DESC')
   end
 
   def new
@@ -29,30 +28,29 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-        redirect_to item_path
+      redirect_to item_path
     else
-        render :edit
+      render :edit
     end
   end
 
   def destroy
     @item.destroy
     redirect_to root_path
-end
+  end
 
   private
+
   def item_params
-    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :delivery_charge_id, :prefecture_id, :delivery_date_indication_id, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :title, :description, :category_id, :status_id, :delivery_charge_id, :prefecture_id,
+                                 :delivery_date_indication_id, :price).merge(user_id: current_user.id)
   end
-  
+
   def move_to_index
-    unless current_user.id == @item.user_id
-      redirect_to action: :index
-    end
+    redirect_to action: :index if current_user.id != @item.user_id || @item.order.present?
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
