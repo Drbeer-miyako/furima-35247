@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
      before_action :authenticate_user!
-     before_action :find_id, only: [:index, :create]
+     before_action :find_id
      before_action :sold_out_item, only: [:index]
 
      def index
