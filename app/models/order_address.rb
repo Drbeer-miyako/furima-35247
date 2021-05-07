@@ -1,6 +1,6 @@
 class OrderAddress < ApplicationRecord
   include ActiveModel::Model
-  attr_accessor :address, :prefecture_id, :city, :block, :building, :telephone, :user_id, :item_id, :token, :price
+  attr_accessor :address, :prefecture_id, :city, :block, :building, :telephone, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :token
