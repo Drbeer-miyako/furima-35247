@@ -12,9 +12,7 @@ class OrderAddress < ApplicationRecord
           validates :telephone, length: { maximum: 11 }, numericality: {only_integer: true}
      end
 
-     with_options numericality: { other_than: 0 } do
-          validates :prefecture_id
-     end
+     validates :prefecture_id, numericality: { other_than: 0 }
      def save
           order = Order.create(item_id: item_id, user_id: user_id)
           DeliveryAddress.create(address: address, prefecture_id: prefecture_id, city: city, block: block, building: building, telephone: telephone, order_id: order.id)
