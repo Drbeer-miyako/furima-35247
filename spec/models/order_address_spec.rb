@@ -26,12 +26,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
       end
-      it 'addressが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
+      it 'addressが空では保存できないこと' do
         @order_address.address = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Address can't be blank")
       end
-      it 'addressにハイフンが無いとと保存できないこと' do
+      it 'addressにハイフンが無いと保存できないこと' do
         @order_address.address = '1234567'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Address is invalid. Include hyphen(-)')
@@ -66,7 +66,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Telephone is not a number")
       end
-      it 'telephoneが１１文字以上だと保存できないこと' do 
+      it 'telephoneが１2文字以上だと保存できないこと' do 
         @order_address.telephone = '123456789012'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Telephone is too long (maximum is 11 characters)")
